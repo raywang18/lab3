@@ -36,10 +36,10 @@ class Joystick:
     self.adc = PCF8591(0x48)
 
   def getX(self):
-    return self.adc.read(0)
+    return self.adc.read(1)
   
   def getY(self):
-    return self.adc.read(1)
+    return self.adc.read(0)
 
 if __name__ == "__main__":
   joystick = Joystick()
