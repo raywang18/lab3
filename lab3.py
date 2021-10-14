@@ -33,7 +33,7 @@ class PCF8591:
 class Joystick:
   
   def __init__(self):
-    self.adc = PCF8591(0x40)
+    self.adc = PCF8591(0x48)
 
   def getX(self):
     return self.adc.read(0)
