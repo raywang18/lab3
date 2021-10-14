@@ -38,7 +38,7 @@ if __name__ == "__main__":
   joystick = Joystick()
   try:
     while True:
-      print(str(joystick.getX()) + "\t" + str(joystick.getY()))
+      print(str(joystick.getX()) + ",\t" + str(joystick.getY()))
       time.sleep(0.1)
   except KeyboardInterrupt:
     print("\nExiting")
