@@ -9,18 +9,11 @@ class PCF8591:
   
   def read(self, chn):
     try:
-        if chn == 0:
-            self.bus.write_byte(self.address,0x40)
-        if chn == 1:
-            self.bus.write_byte(self.address,0x41)
-        if chn == 2:
-            self.bus.write_byte(self.address,0x42)
-        if chn == 3:
-            self.bus.write_byte(self.address,0x43)
+        self.bus.write_byte(self.address, 0x40 | chn)
         self.bus.read_byte(self.address)
     except Exception as e:
         print ("Address: %s" % self.address)
-        print (e)
+        print(e)
     return self.bus.read_byte(self.address)
   
   def write(self, val):
